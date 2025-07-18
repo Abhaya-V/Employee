@@ -18,11 +18,11 @@ app.use("/users", userRoutes);
 const path = require('path');
 
 // Serve static files from React
-app.use(express.static(path.join(__dirname, '../Frontend/vite-project/build')));
+app.use(express.static(path.join(__dirname, '../Frontend/vite-project/dist')));
 
 // Serve index.html for unknown routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Frontend/vite-project/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../Frontend/vite-project/dist', 'index.html'));
 });
 const PORT = process.env.PORT|| 3000
 app.listen(PORT,()=>{
